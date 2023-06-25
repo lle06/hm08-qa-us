@@ -4,13 +4,31 @@ module.exports = {
     toField: '#to',
     phoneNumberField: '#phone',
     codeField: '#code',
+    cardNumberField: '#number',
+    cardCodeField:'.card-second-row #code',
+    messageDriver:'.input-container #comment',
     // Buttons
     callATaxiButton: 'button=Call a taxi',
+    supportiveButton: 'div=Supportive',
     phoneNumberButton: '//div[starts-with(text(), "Phone number")]',
     nextButton: 'button=Next',
     confirmButton: 'button=Confirm',
+    paymentMethodButton: '.pp-text',
+    addCard: 'div=Add card',
+    linkCardButton:'button=Link',
+    closeButton:'.payment-picker .close-button',
+    blanketSwitch:'.r-sw-container .r-sw .switch',
+    sliderRound:'.switch .slider round',
+    addIceCream:'.r-counter .counter-plus',
+    carSearchButton:'.smart-button-wrapper .smart-button',
     // Modals
     phoneNumberModal: '.modal',
+    orderModal: '.order .order-body',
+    driverInfoModal:'.order-body',
+    // Misc.
+    placeHolder: '.plc',
+    paymentCardIcon: '.pp-img',
+    counterValue: '.counter-value',
     // Functions
     fillAddresses: async function(from, to) {
         const fromField = await $(this.fromField);
@@ -48,4 +66,35 @@ module.exports = {
         await codeField.setValue(code)
         await $(this.confirmButton).click()
     },
+    addACreditCard: async function(){
+       const paymentMethodButton = await $(this.paymentMethodButton);
+        await paymentMethodButton.click();
+
+        const addCard = await $(this.addCard);
+        await addCard.click();
+
+        const cardNumberField = await $(this.cardNumberField);
+        await cardNumberField.click();
+        await cardNumberField.setValue(123400004321);
+
+        const cardCodeField = await $(this.cardCodeField);
+        await cardCodeField.click();
+        await cardCodeField.setValue(12);
+
+        const placeHolder = await $(this.placeHolder);
+        await placeHolder.waitForDisplayed();
+        await placeHolder.click();
+
+        const linkCardButton = await $(this.linkCardButton);
+        await linkCardButton.waitForClickable();
+        await linkCardButton.click();
+
+        const closeButton = await $(this.closeButton);
+        await closeButton.click();
+    },
+    messageDriverInput: async function() {
+        const messageDriver = await $(this.messageDriver);
+        await messageDriver.setValue('Get some whiskey');
+        await messageDriver.waitForDisplayed();
+    }
 };

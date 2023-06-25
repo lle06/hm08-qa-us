@@ -60,7 +60,6 @@ describe('call a taxi', () => {
         await driverInfoModal.waitForExist({timeout: 35000});
         await expect (driverInfoModal).toBeExisting();
 
-        await browser.pause(2000);
     }) 
 })
 

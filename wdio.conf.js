@@ -14,7 +14,7 @@ exports.config = {
         browserName: 'chrome',
         acceptInsecureCerts: true,
         'goog:chromeOptions': {
-            args: [/*'headless', 'disable-gpu'*/]
+            args: ['headless', 'disable-gpu']
         }
     },
     {

@@ -59,7 +59,6 @@ describe('call a taxi', () => {
         const driverInfoModal = await $(page.driverInfoModal);
         await driverInfoModal.waitForExist({timeout: 35000});
         await expect (driverInfoModal).toBeExisting();
-
     }) 
 })
 

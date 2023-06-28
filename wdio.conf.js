@@ -14,7 +14,7 @@ exports.config = {
         browserName: 'chrome',
         acceptInsecureCerts: true,
         'goog:chromeOptions': {
-            args: ['headless', 'disable-gpu']
+            args: [/* 'headless', 'disable-gpu' */]
         }
     },
     {
@@ -28,7 +28,7 @@ exports.config = {
 ],
     logLevel: 'error',
     bail: 0,
-    baseUrl: 'https://faf432dd-f797-4bf1-8926-31d424390739.serverhub.practicum-services.com',
+    baseUrl: 'https://6e7ea8c1-e3d9-451e-bd79-045540cd2a14.serverhub.practicum-services.com',
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,

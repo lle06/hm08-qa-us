@@ -10,6 +10,7 @@ module.exports = {
     // Buttons
     callATaxiButton: 'button=Call a taxi',
     supportiveButton: 'div=Supportive',
+    activeSupportiveButton: '//div[@class="tcard active"]//div[starts-with(text(),"Supportive")]',
     phoneNumberButton: '//div[starts-with(text(), "Phone number")]',
     nextButton: 'button=Next',
     confirmButton: 'button=Confirm',
@@ -18,7 +19,6 @@ module.exports = {
     linkCardButton:'button=Link',
     closeButton:'.payment-picker .close-button',
     blanketSwitch:'.r-sw-container .r-sw .switch',
-    sliderRound:'.switch .slider round',
     addIceCream:'.r-counter .counter-plus',
     carSearchButton:'.smart-button-wrapper .smart-button',
     // Modals
@@ -27,8 +27,8 @@ module.exports = {
     driverInfoModal:'.order-body',
     // Misc.
     placeHolder: '.plc',
-    paymentCardIcon: '.pp-img',
     counterValue: '.counter-value',
+    addedPaymentMethod: '//div[@class="pp-row"]//div[contains(text(), "Card")]',
     // Functions
     fillAddresses: async function(from, to) {
         const fromField = await $(this.fromField);

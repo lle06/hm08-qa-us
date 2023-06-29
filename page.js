@@ -19,6 +19,7 @@ module.exports = {
     linkCardButton:'button=Link',
     closeButton:'.payment-picker .close-button',
     blanketSwitch:'.r-sw-container .r-sw .switch',
+    isOrdered: '//div[@class="r-sw-container"]//input [@type= "checkbox"]',
     addIceCream:'.r-counter .counter-plus',
     carSearchButton:'.smart-button-wrapper .smart-button',
     // Modals

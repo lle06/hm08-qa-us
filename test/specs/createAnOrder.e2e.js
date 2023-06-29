@@ -39,9 +39,13 @@ describe('should call a taxi', () => {
 
     })
     it('should order blanket and handkerchiefs', async () => {
-        const blanketSwitchOn = await $(page.blanketSwitch);
-        await blanketSwitchOn.click();
-        await expect (blanketSwitchOn).toBeTruthy(); 
+        const blanketSwitch = await $(page.blanketSwitch);
+        await blanketSwitch.click();
+        await blanketSwitch.waitForDisplayed();
+
+        const isOrdered = await $(page.isOrdered);
+        await expect(isOrdered).toBeChecked();
+    
     })
         it('should order 2 ice creams', async () => {
         const addIceCream = await $(page.addIceCream);
